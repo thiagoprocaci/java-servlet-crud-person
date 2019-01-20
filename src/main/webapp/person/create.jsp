@@ -8,20 +8,7 @@
         Person Create
     </h1>
 
-    <form method="post" action="<%=request.getContextPath()%>/person/create">
-        Name:
 
-        <input type="text" name="name"  >
-        <br><br>
-        Age:
-        <input type="number" name="age" >
-        <br><br>
-        City:
-        <input type="text" name="city"  >
-        <br><br>
-
-        <input type="submit" value="Save" />
-    </form>
 
 </center>
 </body>

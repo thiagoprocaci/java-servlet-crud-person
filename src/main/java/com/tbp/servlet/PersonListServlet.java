@@ -11,10 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(
-        name = "person-list-servlet",
-        urlPatterns = "/person/list"
-)
+
 public class PersonListServlet extends HttpServlet {
 
     PersonRepository personRepository;
@@ -25,9 +22,7 @@ public class PersonListServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Person> personList = personRepository.findAll();
-        req.setAttribute("personList", personList);
-        req.getRequestDispatcher("/person/list.jsp").forward(req, resp);
+
     }
 
 
