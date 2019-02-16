@@ -39,7 +39,7 @@ public class OrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String foodName = req.getParameter("food");
         String personName = req.getParameter("person");
-        String msg = "Pedido realizado :" + personName + " " + foodName;
+        String msg = "We are cooking your " + foodName + ", " + personName + "!";
         req.setAttribute("msg", msg);
 
         List<Person> personList = personRepository.findAll();

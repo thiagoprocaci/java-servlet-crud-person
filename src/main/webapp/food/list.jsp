@@ -1,19 +1,22 @@
 <%@ page import ="java.util.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<!DOCTYPE html>
+
 <html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
 <body>
 <center>
     <h1>
-        Person List
+        Food List
     </h1>
 
     <table>
      <tr>
-        <th>
-            Order
-        </th>
+
         <th>
             Name
         </th>
@@ -27,9 +30,6 @@
       <c:forEach var="food" items="${foodList}">
        <tr>
             <td>
-                <a href="<%=request.getContextPath()%>/food/order">Order</a>
-            </td>
-            <td>
                 <c:out value="${food.name}" />
             </td>
             <td>
@@ -41,7 +41,10 @@
         </tr>
       </c:forEach>
      </table>
-
+       <br><br>
+       <a href="<%=request.getContextPath()%>/food/order">Order</a>
+        <br><br>
+              <a href="<%=request.getContextPath()%>/food/create">Add new food</a>
 
 </center>
 </body>
