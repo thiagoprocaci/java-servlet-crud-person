@@ -10,7 +10,7 @@
     </h1>
     ${msg}
     <form method="post" action="<%=request.getContextPath()%>/food/order">
-      <select name="food">
+      <select name="food" multiple>
           <c:forEach var="food" items="${foodList}">
               <option value="${food.name}">${food.name}</option>
           </c:forEach>

@@ -37,17 +37,20 @@ public class OrderServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String foodName = req.getParameter("food");
+        String[] foodValueList = req.getParameterValues("food");
         String personName = req.getParameter("person");
-        String msg = "Pedido realizado :" + personName + " " + foodName;
-        req.setAttribute("msg", msg);
 
+        for(String food :foodValueList ) {
+            System.out.println(food + " " + personName);
+
+        }
         List<Person> personList = personRepository.findAll();
         List<Food> foodList = foodRepository.findAll();
 
         req.setAttribute("foodList", foodList);
         req.setAttribute("personList", personList);
-
+        String msg = "Pedido realizado :" + personName + " " ;
+        req.setAttribute("msg", msg);
         req.getRequestDispatcher("/food/order.jsp").forward(req, resp);
     }
 }
